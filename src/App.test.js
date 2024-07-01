@@ -10,7 +10,7 @@ test("Task: should exist", () => {
 
 test("Renders Priority Label", () => {
   render(<App />);
-  const linkElement = screen.getByText("Priorityx:");
+  const linkElement = screen.getByText("Priority:");
   expect(linkElement).toBeInTheDocument();
 });
 
