@@ -11,8 +11,8 @@ permissions:
   pull-requests: write
   checks: write
 jobs:
-  build_and_preview:    
-    runs-on: ubuntu-latest
+  build_and_preview_on_windows:    
+    runs-on: windows-2022
     steps:
       - uses: actions/checkout@v4
       - run: npm ci && npm run build
@@ -21,9 +21,4 @@ jobs:
           repoToken: ${{ secrets.GITHUB_TOKEN }}
           firebaseServiceAccount: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_TRAINING_20250915 }}
           projectId: training-20250915
-  Michek:    
-    runs-on: windows-2022
-    steps:
-      - uses: actions/checkout@v4
-      - run: npm ci && npm run build
-     
+ 
