@@ -5,6 +5,7 @@ name: Deploy to Firebase Hosting on PR
 on: 
   pull_request:
   workflow_dispatch:
+  push:
 permissions:
   contents: read
   pull-requests: write
