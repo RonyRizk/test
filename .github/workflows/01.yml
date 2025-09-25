@@ -1,0 +1,18 @@
+# .github/workflows/nightly.yml
+name: Nightly ETL
+
+on:
+  schedule:
+    - cron: "30 2 * * *"   # Every day at 02:30 UTC
+  workflow_dispatch:        # Allow manual run from the UI
+
+jobs:
+  run-nightly:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Do the work
+        run: |
+          echo "Running ETL at $(date -u +'%Y-%m-%d %H:%M:%S') UTC"
